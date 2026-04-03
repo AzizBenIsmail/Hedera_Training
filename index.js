@@ -23,8 +23,8 @@ async function helloHedera() {
   //Create your Hedera Testnet client
   const client = Client.forTestnet();
 
-  //Decode the private key from HEX string
-  const myPrivateKey = PrivateKey.fromStringED25519(myPrivateKeyString);
+  //Decode the private key from DER-encoded HEX string
+  const myPrivateKey = PrivateKey.fromStringDer(myPrivateKeyString);
 
   //Set your account as the client's operator
   client.setOperator(myAccountId, myPrivateKey);
